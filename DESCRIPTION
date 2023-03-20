@@ -1,0 +1,16 @@
+Package: p.post
+Title: Calculate the Posterior Probability of Success
+Version: 0.0.0.9000
+Authors@R: 
+    person("John", "Reeves", , "john.a.reeves@verizon.net", role = c("aut", "cre"))
+Description: Produces output (excel sheet, graphs) on P(p_post>x)>=y for a range of 
+    x and y.  Prior is assumed to be Beta (1,1).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    stringr
