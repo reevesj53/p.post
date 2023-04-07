@@ -6,11 +6,16 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of p.post is to …
+The goal of p.post is to populate a spreadsheet with the number of
+successes required for a range of parameters:
+
+- n
+- p1
+- p2
 
 ## Installation
 
-You can install the development version of p.post from
+You can install the latest version of p.post from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -18,48 +23,40 @@ You can install the development version of p.post from
 devtools::install_github("reevesj53/p.post")
 ```
 
-## Usage
+## Example
 
-A fairly common task when dealing with strings is the need to split a
-single string into many parts. This is what `base::strplit()` and
-`stringr::str_split()` do.
-
-``` r
-(x <- "alfa,bravo,charlie,delta")
-#> [1] "alfa,bravo,charlie,delta"
-strsplit(x, split = ",")
-#> [[1]]
-#> [1] "alfa"    "bravo"   "charlie" "delta"
-stringr::str_split(x, pattern = ",")
-#> [[1]]
-#> [1] "alfa"    "bravo"   "charlie" "delta"
-```
-
-Notice how the return value is a **list** of length one, where the first
-element holds the character vector of parts. Often the shape of this
-output is inconvenient, i.e. we want the un-listed version.
-
-That’s exactly what `regexcite::str_split_one()` does.
+The code below shows an example of output for a success rate of 0.3, and
+a posterior probability of exceeding the success rate ranfing from 0.5
+to 0.8.
 
 ``` r
 library(p.post)
-
-str_split_one(x, pattern = ",")
-#> [1] "alfa"    "bravo"   "charlie" "delta"
+p1 <- 0.3
+p2 <- seq(0.5, 0.8, 0.1)
+post_prob <- calc_post(80, p1, p2)
 ```
 
-Use `str_split_one()` when the input is known to be a single string. For
-safety, it will error if its input has length greater than one.
-
-`str_split_one()` is built on `stringr::str_split()`, so you can use its
-`n` argument and stringr’s general interface for describing the
-`pattern` to be matched.
+The resulting data frame is shown below.
 
 ``` r
-str_split_one(x, pattern = ",", n = 2)
-#> [1] "alfa"                "bravo,charlie,delta"
-
-y <- "192.168.0.1"
-str_split_one(y, pattern = stringr::fixed("."))
-#> [1] "192" "168" "0"   "1"
+post_prob
+#> # A tibble: 320 × 5
+#>        n  rate  prob   res post_prob
+#>    <int> <dbl> <dbl> <int>     <dbl>
+#>  1     1   0.3   0.5     1     0.91 
+#>  2     2   0.3   0.5     1     0.784
+#>  3     3   0.3   0.5     1     0.652
+#>  4     4   0.3   0.5     1     0.528
+#>  5     5   0.3   0.5     2     0.744
+#>  6     6   0.3   0.5     2     0.647
+#>  7     7   0.3   0.5     2     0.552
+#>  8     8   0.3   0.5     3     0.730
+#>  9     9   0.3   0.5     3     0.650
+#> 10    10   0.3   0.5     3     0.570
+#> # ℹ 310 more rows
 ```
+
+The excel file is below.
+
+![Excel
+output](C:/Users/JohnR/OneDrive%20-%20HUTCHMED/Documents/p.post/excel.png)
