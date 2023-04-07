@@ -32,7 +32,7 @@ excel_out <- function(post_prob, file="post_prob.xlsx") {
   my_style2 <- openxlsx::createStyle(wrapText = TRUE, textDecoration = "Bold")
 
   sheet_out <- function(prob1) {
-    post_prob <- post_prob |> dplyr::filter(prob==prob1) |> dplyr::select(!prob) |>
+    post_prob <- post_prob |> dplyr::filter(prob==prob1) |> dplyr::select(!c(prob,rate)) |>
       dplyr::rename(tidyselect::all_of(rename.vec))
     sheet_name <- paste("P = ", prob1, sep="")
     openxlsx::addWorksheet(wb, sheetName = sheet_name)
