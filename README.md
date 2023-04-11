@@ -7,14 +7,14 @@
 <!-- badges: end -->
 
 The goal of p.post is to populate a spreadsheet with the number of
-successes required, given number of subjects , to satisfy conditions for
-the posterior probability of the underlying success rate, p_post. The
-following parameters are used:
+successes required, given number of subjects supplied, to satisfy
+conditions set for the posterior probability of the underlying success
+rate, p_post. Thus, it ensures $P({\sf p\_post}>p_1) \ge p_2$, where:
 
 - $n$: **Number of subjects**. The number of successes are calculated
   for $1:n$ sample size.
-- $p_1$
-- $p_2$
+- $p_1$: **Threshold for probability of success**.
+- $p_2$: **Threshold for posterior probability**.
 
 ## Installation
 
@@ -29,8 +29,9 @@ devtools::install_github("reevesj53/p.post")
 ## Example
 
 The code below shows an example of output for a success rate of 0.3, and
-a posterior probability of exceeding the success rate ranfing from 0.5
-to 0.8.
+a posterior probability of exceeding the success rate ranging from 0.5
+to 0.8. Number of required successes are computed for a range of N, from
+1 to 80.
 
 ``` r
 library(p.post)
@@ -59,6 +60,14 @@ post_prob
 #> # ℹ 310 more rows
 ```
 
-The excel file is below.
+The data frame can be output to an excel file, with a separate sheet for
+each of the success probabilities, \[0.5, 0.6, 0.7, 0.8\].
+
+``` r
+excel_out(post_prob)
+```
+
+The excel file below will by default be saved in the R working
+directory.
 
 ![Excel output](/man/figures/excel.png)
