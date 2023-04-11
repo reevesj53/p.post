@@ -7,22 +7,22 @@
 excel_out(post_prob, file = "post_prob.xlsx")
 }
 \arguments{
-\item{post_prob}{Data frame calculated by \code{\link[=calc_post]{calc_post()}}}
+\item{post_prob}{Data frame calculated by \code{\link[=calc_post]{calc_post()}}.}
 
-\item{file}{file name (defaults to "post_prob.xlsx")}
+\item{file}{file name (defaults to "post_prob.xlsx").}
 }
 \value{
 An excel file with the following columns
-\itemize{\item \strong{n}: Number of subjects
-\item \strong{res}: Number of responders
-\item \strong{prob}: Achieved posterior probability of success
+\itemize{\item \strong{n}: Number of subjects.
+\item \strong{res}: Number of responders.
+\item \strong{prob}: Achieved posterior probability of success.
 }
 }
 \description{
-Export the data frame computed by \code{\link[=calc_post]{calc_post()}} to an Excel file
+Export the data frame computed by \code{\link[=calc_post]{calc_post()}} to an Excel file.
 }
 \details{
-\code{\link[=excel_out]{excel_out()}} returns an excel file
+\code{\link[=excel_out]{excel_out()}} saves an excel file to the working directory.
 }
 \examples{
 # Generate number of successes for 80 subjects.  Rate, p1, is 0.3.

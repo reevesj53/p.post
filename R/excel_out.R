@@ -1,18 +1,18 @@
 #' Export to Excel
 #'
-#' Export the data frame computed by [calc_post()] to an Excel file
+#' Export the data frame computed by [calc_post()] to an Excel file.
 #'
 #' @export
-#' @param post_prob Data frame calculated by [calc_post()]
-#' @param file file name (defaults to "post_prob.xlsx")
+#' @param post_prob Data frame calculated by [calc_post()].
+#' @param file file name (defaults to "post_prob.xlsx").
 #' @return An excel file with the following columns
-#'   \itemize{\item \strong{n}: Number of subjects
-#'            \item \strong{res}: Number of responders
-#'            \item \strong{prob}: Achieved posterior probability of success
+#'   \itemize{\item \strong{n}: Number of subjects.
+#'            \item \strong{res}: Number of responders.
+#'            \item \strong{prob}: Achieved posterior probability of success.
 #'            }
 #'
 #' @details
-#' [excel_out()] returns an excel file
+#' [excel_out()] saves an excel file to the working directory.
 #'
 #' @examples
 #' # Generate number of successes for 80 subjects.  Rate, p1, is 0.3.

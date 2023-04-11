@@ -1,28 +1,28 @@
 #' Posterior probability of success
 #'
-#' The main function to calculate the number of success required to ensure P(post>p1)>=p2
+#' The main function to calculate the number of success required, given number of subjects \eqn{n},
+#'  to satisfy conditions for the posterior probability of the underlying success rate, p_post.
 #'
 #' @export
 #' @param num Number of subjects.
-#' @param rate underlying probability of success.
-#' @param prob Threshold for posterior probability.
+#' @param rate Threshold for probability of success, \eqn{p_1}.
+#' @param prob Threshold for posterior probability, \eqn{p_2}.
 #' @return A data frame (tibble) with the following columns:
 #'   \itemize{\item \strong{n}: Number of subjects
 #'            \item \strong{res}: Number of responders
-#'            \item \strong{prob}: Achieved posterior probability of success
+#'            \item \strong{prob}: Achieved posterior probability of success, \eqn{p_2}.
 #'            }
 #'
 #' @details
-#' [calc_post()] returns number successes required such that the posterior probability of achieving a success rate p1
-#' exceeds p2
+#' [calc_post()] returns number successes required such that \eqn{P({\sf p\_post}>p_1) \ge p_2}.
 #'
 #' @examples
-#' # Generate number of successes for 80 subjects.  Rate, p1, is 0.3.
-#' # Posterior probability threshold ranges from
-#' # 0.5 to 0.8.
+#' # Generate number of successes for up to 80 subjects.  Rate, p1, is 0.3.
+#' # Posterior probability threshold ranges from 0.5 to 0.8.
 #' p1 <- 0.3
 #' p2 <- seq(0.5, 0.8, 0.1)
 #' post_prob <- calc_post(80, p1, p2)
+#' post_prob
 
 calc_post <- function(num,rate,prob){
 
