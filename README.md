@@ -59,4 +59,4 @@ post_prob
 The excel file is below.
 
 ![Excel
-output](C:/Users/JohnR/OneDrive%20-%20HUTCHMED/Documents/p.post/man/figures/excel.png)
+output](C:/Users/JohnR/OneDrive%20-%20HUTCHMED/Documents/p.post/man/figures/README-excel.png)
