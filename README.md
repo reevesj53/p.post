@@ -11,10 +11,10 @@ successes required, given number of subjects , to satisfy conditions for
 the posterior probability of the underlying success rate, p_post. The
 following parameters are used:
 
-- : **Number of subjects**. The number of successes are calculated for
-  1: sample size.
-- p1
-- p2
+- $n$: **Number of subjects**. The number of successes are calculated
+  for $1:n$ sample size.
+- $p_1$
+- $p_2$
 
 ## Installation
 
