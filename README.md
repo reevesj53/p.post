@@ -9,11 +9,10 @@
 The goal of p.post is to populate a spreadsheet with the number of
 successes required, given number of subjects supplied, relating to the
 posterior probability of the underlying success rate, p_post. Thus, it
-ensures $P({\sf p\\_post}>p_1)$, where: I do not want \_italic text\_
-here
+ensures $P({\sf p\\_post}>p_1)$, where:
 
 - $N$: **Number of subjects**. The number of successes are calculated
-  for a sample size $n = 1,\dots\N$.
+  for a sample size $n = 1,\dots,N$.
 - $p_1$: **Threshold for probability of success**.
 - $p_2$: **Threshold for posterior probability**.
 
