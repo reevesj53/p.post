@@ -7,13 +7,13 @@
 <!-- badges: end -->
 
 The goal of p.post is to populate a spreadsheet with the number of
-successes required, given number of subjects supplied, to satisfy
-conditions set for the posterior probability of the underlying success
-rate, p_post. Thus, it ensures $P({\sf p\\_post}>p_1)$, where: I do not
-want \_italic text\_ here
+successes required, given number of subjects supplied, relating to the
+posterior probability of the underlying success rate, p_post. Thus, it
+ensures $P({\sf p\\_post}>p_1)$, where: I do not want \_italic text\_
+here
 
-- $n$: **Number of subjects**. The number of successes are calculated
-  for $1:n$ sample size.
+- $N$: **Number of subjects**. The number of successes are calculated
+  for a sample size $n = 1,\dots\N$.
 - $p_1$: **Threshold for probability of success**.
 - $p_2$: **Threshold for posterior probability**.
 
@@ -62,7 +62,8 @@ post_prob
 ```
 
 The data frame can be output to an excel file, with a separate sheet for
-each of the success probabilities, \[0.5, 0.6, 0.7, 0.8\].
+each of the success probabilities, \[0.5, 0.6, 0.7, 0.8\]. Run the R
+function $\dots$
 
 ``` r
 excel_out(post_prob)
