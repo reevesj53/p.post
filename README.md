@@ -9,7 +9,7 @@
 The goal of p.post is to populate a spreadsheet with the number of
 successes required, given number of subjects supplied, to satisfy
 conditions set for the posterior probability of the underlying success
-rate, p_post. Thus, it ensures $P(p\_post>p_1) \ge p_2$, where:
+rate, p_post. Thus, it ensures $P({\sf p\\_post}>p_1)$, where:
 
 - $n$: **Number of subjects**. The number of successes are calculated
   for $1:n$ sample size.
