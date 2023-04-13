@@ -30,6 +30,8 @@ excel_out <- function(post_prob, file="post_prob.xlsx") {
   rename.vec <- c(N="n", "No. of Responders"="res", "Posterior Probability of Success"="post_prob")
   my_style1 <- openxlsx::createStyle(wrapText = TRUE)
   my_style2 <- openxlsx::createStyle(wrapText = TRUE, textDecoration = "Bold")
+  mytext1 <- paste("Number of Responders such that: \n",
+                   "Assumes a non-informative Beta(1,1) prior for success.",sep="")
 
   sheet_out <- function(prob1) {
     post_prob <- post_prob |> dplyr::filter(prob==prob1) |> dplyr::select(!c(prob,rate)) |>
@@ -38,12 +40,11 @@ excel_out <- function(post_prob, file="post_prob.xlsx") {
     openxlsx::addWorksheet(wb, sheetName = sheet_name)
     openxlsx::freezePane(wb, sheet = sheet_name, firstRow = TRUE)
     openxlsx::writeDataTable(wb, sheet_name, x = post_prob, colNames = TRUE, tableStyle = "TableStyleLight9")
-    openxlsx::addStyle(wb, sheet_name, my_style1, rows=1, cols = 1:6, gridExpand = TRUE)
+    openxlsx::addStyle(wb, sheet_name, my_style1, rows=1, cols = 1:5, gridExpand = TRUE)
     openxlsx::addStyle(wb, sheet_name, my_style2, rows=1, cols = 6)
     openxlsx::setColWidths(wb, sheet_name, cols = 1:6,  widths = c(15,15,15,25,30,40))
-    mytext1 <- paste("Number of Responders such that: \n",
-                     "Assumes a non-informative Beta(1,1) prior for success.",sep="")
-    mytext2 <- paste("Prob (Posterior Probability > ", rate,") >= ", prob1, "\n\n")
+
+    mytext2 <- paste("Prob (Posterior Probability > ", rate,") >= ", prob1, "\n\n",sep="")
     openxlsx::writeData(wb, sheet_name, mytext1, startCol = 5, startRow = 1)
     openxlsx::writeData(wb, sheet_name, mytext2, startCol = 6, startRow = 1)
   }
