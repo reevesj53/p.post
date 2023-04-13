@@ -9,7 +9,7 @@
 The goal of p.post is to populate a spreadsheet with the number of
 successes required, given number of subjects supplied, relating to the
 posterior probability of the underlying success rate, p_post. Thus, it
-ensures $P({\sf p\\_post}>p_1) \ge p_2$, where:
+ensures $P({\sf p\\_post}>p_1)$, where:
 
 - $N$: **Number of subjects**. The number of successes are calculated
   for a sample size $n = 1,\dots,N$.
@@ -30,7 +30,7 @@ devtools::install_github("reevesj53/p.post")
 
 The code below shows an example of output for a success rate of 0.3, and
 a posterior probability of exceeding the success rate ranging from 0.5
-to 0.8. Number of required successes are computed for a range of N, from
+to 0.8. Number of required successes are computed for a range of n, from
 1 to 80.
 
 ``` r

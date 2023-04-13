@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of p.post is to populate a spreadsheet with the number of successes required, given number of subjects \eqn{n} supplied, relating to the posterior probability of the underlying success rate, p_post.  Thus, it ensures $P({\sf p\\_post}>p_1) \ge p_2$, where: 
+The goal of p.post is to populate a spreadsheet with the number of successes required, given number of subjects \eqn{n} supplied, relating to the posterior probability of the underlying success rate, p_post.  Thus, it ensures $P({\sf p\\_post}>p_1)$, where: 
 
 * $N$: **Number of subjects**.  The number of successes are calculated for a sample size $n = 1,\dots,N$.
 * $p_1$: **Threshold for probability of success**.
@@ -33,7 +33,7 @@ You can install the latest version of p.post from [GitHub](https://github.com/) 
 devtools::install_github("reevesj53/p.post")
 ```
 ## Example
-The code below shows an example of output for a success rate of 0.3, and a posterior probability of exceeding the success rate ranging from 0.5 to 0.8.  Number of required successes are computed for a range of N, from 1 to 80.
+The code below shows an example of output for a success rate of 0.3, and a posterior probability of exceeding the success rate ranging from 0.5 to 0.8.  Number of required successes are computed for a range of n, from 1 to 80.
 
 ```{r example}
 library(p.post)

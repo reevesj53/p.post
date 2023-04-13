@@ -9,8 +9,10 @@
 #' @param prob Threshold for posterior probability, \eqn{p_2}.
 #' @return A data frame (tibble) with the following columns:
 #'   \itemize{\item \strong{n}: Number of subjects
+#'            \item \strong{rate}: \eqn{p_1}
+#'            \item \strong{prob}: \eqn{p_2}
 #'            \item \strong{res}: Number of responders
-#'            \item \strong{prob}: Achieved posterior probability of success, \eqn{p_2}.
+#'            \item \strong{post_prob}: Achieved posterior probability of success, \eqn{p_2}.
 #'            }
 #'
 #' @details
